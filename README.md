@@ -35,6 +35,9 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Inline functions](#inline-functions)
   - [Operator overloading](#operator-overloading)
   - [Variable number of arguments (varargs)] (#varargs)
+  - [Infix notation](#infix-notation)
+  - [Tail recursive functions](#tail-recursive-functions)
+  
   
 ## Introduction <a name="introduction"></a>
 Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others.
@@ -497,4 +500,23 @@ fun main() {
 
 ```
 
+### Infix notation <a name="infix-notation"></a>
 
+Infix in Kotlin allows you to define functions that can be called using infix notation (i.e., without using parentheses and the dot notation).
+
+``kotlin
+infix fun Int.times(str: String) = str.repeat(this)
+
+fun main() {
+    val str = 5 times "Hello "
+    println(str) // Output: "Hello Hello Hello Hello Hello "
+}
+```
+
+### Tail recursive functions <a name="tail-recursive-functions"></a>
+
+Tail recursive functions in Kotlin are functions that optimize memory usage by reusing the same stack frame for each recursive call.
+
+```kotlin
+
+```
