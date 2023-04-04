@@ -31,6 +31,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Lambda Expressions](#lambda-expressions)
   - [Extension Functions and Properties](#extension-functions-and-Properties)
   - [Higher-Order Functions](#higher-order-functions)
+  - [Inline functions](#inline-functions)
   
 ## Introduction <a name="introduction"></a>
 Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others.
@@ -146,7 +147,94 @@ Here's a brief overview of the most commonly used types:
 
 ### Operators <a name="operators"></a>
 
+Arithmetic operators
 
+```kotlin
+  val a = 10
+  val b = 5
+  println(a + b) // Prints "15"
+  println(a - b) // Prints "5"
+  println(a * b) // Prints "50"
+  println(a / b) // Prints "2"
+  println(a % b) // Prints "0"
+ ```
+  
+ Comparison operators
+```kotlin
+  val c = 10
+  val d = 5
+  println(c > d) // Prints "true"
+  println(c >= d) // Prints "true"
+  println(c < d) // Prints "false"
+  println(c <= d) // Prints "false"
+  println(c == d) // Prints "false"
+  println(c != d) // Prints "true"
+  val e = Integer(10)
+  val f = Integer(10)
+  println(e === f) // Prints "false"
+  val g = e
+  println(e === g) // Prints "true"
+ ```
+  
+Assignment operators
+  
+ ```kotlin
+  var h = 10
+  h += 5
+  println(h) // Prints "15"
+  h -= 5
+  println(h) // Prints "10"
+  h *= 2
+  println(h) // Prints "20"
+  h /= 4
+  println(h) // Prints "5"
+  h %= 3
+  println(h) // Prints "2"
+ ```
+    
+Logical operators    
+```kotlin  
+  val i = true
+  val j = false
+  println(i && j) // Prints "false"
+  println(i || j) // Prints "true"
+  println(!i) // Prints "false"
+ ```
+    
+Bitwise operators
+
+```kotlin
+  val k = 0b1010
+  val l = 0b1100
+  println(k and l) // Prints "8" (0b1000)
+  println(k or l) // Prints "14" (0b1110)
+  println(k xor l) // Prints "6" (0b0110)
+  println(k.inv()) // Prints "-11" (0b11111111111111111111111111110101)
+ ```
+
+Elvis operator
+
+ ```kotlin
+  val m: String? = null
+  val n = m ?: "default"
+  println(n) // Prints "default"
+```
+    
+Range operator
+
+```kotlin
+  val o = 1..10
+  println(o.contains(5)) // Prints "true"
+  println(o.contains(11)) // Prints "false"
+```
+    
+ In operator
+ 
+ ```kotlin
+  val p = arrayOf("apple", "banana", "orange")
+  println("apple" in p) // Prints "true"
+  println("grape" in p) // Prints "false"
+```
 
 ## Control flow  <a name="control-flow"></a>
 
@@ -362,3 +450,7 @@ fun main() {
     println(func(7))                                                
 }
 ```
+### Inline functions <a name="inline-functions"></a>
+
+
+
