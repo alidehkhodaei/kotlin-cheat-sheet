@@ -66,28 +66,28 @@ z = 3.14 // Valid, z is initialized with a value
 ```
 ### Type Conversion <a name="type-conversion"></a>
 
-Kotlin provides several methods for converting between data types.
+Kotlin provides several methods for converting between data types. Here's an example in Kotlin that demonstrates various methods of type conversion.
 
 ```kotlin
-val x = "5"
-val y = x.toInt() // y is now an Int with value 5
+    val str: String = "123"
+    val num: Int = str.toInt() // Convert String to Int
 
-val a = 5
-val b = a.toString() // b is now a String with value "5"
+    val dbl: Double = 123.45
+    val int: Int = dbl.toInt() // Convert Double to Int
+
+    val lng: Long = 9876543210
+    val flt: Float = lng.toFloat() // Convert Long to Float
+
+    val bol: Boolean = true
+    val strBol: String = bol.toString() // Convert Boolean to String
+
+    val char: Char = 'A'
+    val intChar: Int = char.toInt() // Convert Char to Int
+
+    val byte: Byte = 127
+    val short: Short = byte.toShort() // Convert Byte to Short
+
 ```
-
- Here are some of the most commonly used methods:
-
-| Name | Description     | 
-| :-------- | :------- | 
-| toByte() | converts a value to Byte type
-|toShort() | converts a value to Short type
-|toInt()   | converts a value to Int type
-|toLong()  | converts a value to Long type
-|toFloat() | converts a value to Float type
-|toDouble()| converts a value to Double type
-|toChar()  | converts a value to Char type
-|toString()| converts a value to String type
 
 ### Lazy and lateinit  <a name="lazy-and-lateinit"></a>
 
