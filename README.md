@@ -30,6 +30,8 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Default arguments and named arguments](#default-arguments-and-named-arguments)
   - [Function Return Types](#function-return-type)
   - [Local functions](#local-functions)
+  - [Member functions](#member-functions)
+  - [Generic functions](#generic-functions)
   - [Lambda Expressions](#lambda-expressions)
   - [Extension Functions and Properties](#extension-functions-and-Properties)
   - [Higher-Order Functions](#higher-order-functions)
@@ -38,6 +40,10 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Variable number of arguments (varargs)](#varargs)
   - [Infix notation](#infix-notation)
   - [Tail recursive functions](#tail-recursive-functions)
+
+- [Other Topics](#other)
+  -[Destructuring declarations](#destructuring-declarations)
+  -[Reflection](#reflection)
   
   
 ## Introduction <a name="introduction"></a>
@@ -437,6 +443,26 @@ fun main() {
 }
 ```
 
+### Member functions <a name="member-functions"></a>
+
+A member function is a function that is defined inside a class or object.
+
+```kotlin
+class Sample {
+    fun foo() { print("") }
+}
+```
+
+### Generic functions <a name="generic-functions"></a>
+
+Functions can have generic parameters, which are specified using angle brackets before the function name
+
+```kotlin
+fun <T> function(item: T){ 
+ //Code
+}
+```
+
 ### Lambda Expressions  <a name="lambda-expressions"></a>
 
 ```kotlin
@@ -558,3 +584,37 @@ Tail recursive functions in Kotlin are functions that optimize memory usage by r
 ```kotlin
 
 ```
+## Other Topics <a name="Other-topics"></a>
+
+### Destructuring declarations <a name="destructuring-declarations"></a>
+Destructuring declarations in Kotlin allow you to break down objects into individual variables in a single line of code.
+
+```kotlin
+ val person=Person("Ali",24)
+ val (name, age) = person
+```
+### Reflection <a name="reflection"></a>
+Reflection is a set of language and library features that allows you to introspect the structure of your program at runtime. 
+This is a example:
+```kotlin
+
+data class Person(val name: String, val age: Int)
+
+fun main() {
+    val person = Person("Ali", 24)
+    
+    // Get the class object of Person using reflection
+    val personClass = Person::class
+    
+    // Get the properties of Person using reflection
+    val properties = personClass.memberProperties
+    
+    // Print the values of the properties
+    properties.forEach { property ->
+        val value = property.get(person)
+        println("${property.name}: $value")
+    }
+}
+
+```
+
