@@ -46,6 +46,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   -[Reflection](#reflection)
   -[Annotations](#annotations)
   -[Packages and imports](#packages-and-imports)
+  -[Null safety](#null-safety)
   
   
 ## Introduction <a name="introduction"></a>
@@ -647,4 +648,29 @@ fun main() {
     val person = Person("John", 30)
     println("Name: ${person.name}, Age: ${person.age}")
 }
+```
+
+### Null safety <a name="null-safety"></a>
+
+Kotlin has null safety, which helps prevent null pointer exceptions. Kotlin provides operators to work with nullable types, including safe call, elvis, and not-null assertion operators. These features help developers write more reliable code and avoid null pointer exceptions.
+
+```kotlin
+
+    var nullableStr: String? = null
+    var nonNullStr: String = "Hello"
+
+    // safe call operator
+    println(nullableStr?.length) // prints null
+
+    // elvis operator
+    val len = nullableStr?.length ?: -1
+    println(len) // prints -1
+
+    // not-null assertion operator
+    // throws null pointer exceptions because nullableStr is null
+    println(nullableStr!!.length)
+
+    // this would not compile because nonNullStr is not nullable
+    // nonNullStr = null
+
 ```
