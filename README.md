@@ -27,8 +27,15 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Lambda Expressions](#lambda-expressions)
   
 ## Introduction <a name="introduction"></a>
-Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others. This cheat sheet will cover some of the essential Kotlin concepts.
+Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others.
+This cheat sheet will cover some of the essential Kotlin concepts.
 
+Here's an example of printing "Hello world" in Kotlin:
+```kotlin
+fun main() {
+    println("Hello world")
+}
+```
 ## Variables and Types <a name="variables-types"></a>
 
 
