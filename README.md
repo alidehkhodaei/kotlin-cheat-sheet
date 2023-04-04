@@ -43,6 +43,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Variable number of arguments (varargs)](#varargs)
   - [Infix notation](#infix-notation)
   - [Tail recursive functions](#tail-recursive-functions)
+- [Collections](#collections)  
 - [Classes and objects](#classes-and-objects)
 
 - [Other Topics](#other)
