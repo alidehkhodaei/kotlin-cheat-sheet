@@ -119,21 +119,17 @@ println(myLateInitVar) // Prints "Hello World"
 ### Types <a name="types"></a>
 Here's a brief overview of the most commonly used types:
 
-| Name | Description     | Example
-| :-------- | :------- |:---------
-Byte	| 8-bit signed integer |	val myByte: Byte = 10
-Short |	16-bit signed integer	| val myShort: Short = 100
-Int |	32-bit signed integer	| val myInt: Int = 1000
-Long	| 64-bit signed integer	| val myLong: Long = 1000000
-Float	| 32-bit floating point number	| val myFloat: Float = 3.14F
-Double |	64-bit floating point number	| val myDouble: Double = 3.14159
-Char	| A single Unicode character	| val myChar: Char = 'A'
-String	| A sequence of characters	| val myString: String = "Hello, world!"
-Boolean |	A logical value of true or false	| val myBool: Boolean = true
-Array |	A collection of elements of a particular type	| val myArray: Array<Int> = arrayOf(1, 2, 3)
-List	| A read-only collection that supports accessing elements by index	| val myList: List<String> = listOf("apple", "banana", "orange")
-Set	| A collection that contains no duplicate elements | val mySet: Set<Int> = setOf(1, 2, 3)
-Map |	A collection of key-value pairs |	val myMap: Map<String, Int> = mapOf("one" to 1, "two" to 2, "three" to 3)
+```kotlin
+    val booleanVar: Boolean = true
+    val byteVar: Byte = 127
+    val shortVar: Short = 32767
+    val intVar: Int = 2147483647
+    val longVar: Long = 9223372036854775807L
+    val floatVar: Float = 3.14f
+    val doubleVar: Double = 3.14159265358979323846
+    val charVar: Char = 'A'
+    val stringVar: String = "Hello, world!"
+```
 
 ## Control flow  <a name="control-flow"></a>
 
