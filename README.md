@@ -44,6 +44,8 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 - [Other Topics](#other)
   -[Destructuring declarations](#destructuring-declarations)
   -[Reflection](#reflection)
+  -[Annotations](#annotations)
+  -[Packages and imports](#packages-and-imports)
   
   
 ## Introduction <a name="introduction"></a>
@@ -595,6 +597,7 @@ Destructuring declarations in Kotlin allow you to break down objects into indivi
 ```
 ### Reflection <a name="reflection"></a>
 Reflection is a set of language and library features that allows you to introspect the structure of your program at runtime. 
+
 This is a example:
 ```kotlin
 
@@ -617,4 +620,31 @@ fun main() {
 }
 
 ```
+### Annotations <a name="annotations"></a>
+Annotations in Kotlin are special labels that can be applied to declarations such as classes, functions, and properties to provide additional information or metadata about the declaration at compile-time and runtime.
+This is a example:
+```kotlin
+@Deprecated("Use newMethod() instead", ReplaceWith("newMethod()"))
+fun oldMethod() {
+    // ...
+}
+```
 
+### Packages and imports <a name="packages-and-imports"></a>
+Packages are used to group related classes, functions, and other declarations together. Imports are used to make declarations from other packages accessible within your current file.
+
+```kotlin
+package com.example.models
+
+class Person(val name: String, val age: Int) {
+    // class implementation
+}
+```
+```kotlin
+import com.example.models.Person
+
+fun main() {
+    val person = Person("John", 30)
+    println("Name: ${person.name}, Age: ${person.age}")
+}
+```
