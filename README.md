@@ -11,11 +11,11 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Get input from user](#get-input-from-user)
   - [Comments](#comments)
   - [KDoc](#kdoc)
-  - [var vs val](#var-vs-val)
+  - [Variables](#variables)
+  - [Data types](#data-types)
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
   - [Lazy and lateinit](#lazy-and-lateinit)
-  - [Types](#types)
   - [String templates](#string-templates)
   - [Operators](#operators)
 - [Control Flow](#control-flow)
@@ -107,7 +107,7 @@ fun sum(a: Int, b: Int): Int {
 }
 ```
 
-### var vs val <a name="var-vs-val"></a>
+### Variables <a name="variables"></a>
 In Kotlin, variables can be declared using either the var or val keyword.
 
 var variables are mutable, meaning their value can be changed after they are initialized.
@@ -121,6 +121,21 @@ val variables, on the other hand, are immutable, meaning their value cannot be c
 ```kotlin
 val y = 5
 y = 10 // This will result in a compilation error
+```
+
+### Data types <a name="data-types"></a>
+Here's a brief overview of the most commonly used data types:
+
+```kotlin
+    val booleanVar: Boolean = true
+    val byteVar: Byte = 127
+    val shortVar: Short = 32767
+    val intVar: Int = 2147483647
+    val longVar: Long = 9223372036854775807L
+    val floatVar: Float = 3.14f
+    val doubleVar: Double = 3.14159265358979323846
+    val charVar: Char = 'A'
+    val stringVar: String = "Hello, world!"
 ```
 
 ### Type Inference <a name="type-inference"></a>
@@ -190,20 +205,6 @@ myLateInitVar = "Hello World"
 
 // Now we can access the variable without an exception
 println(myLateInitVar) // Prints "Hello World"
-```
-### Types <a name="types"></a>
-Here's a brief overview of the most commonly used types:
-
-```kotlin
-    val booleanVar: Boolean = true
-    val byteVar: Byte = 127
-    val shortVar: Short = 32767
-    val intVar: Int = 2147483647
-    val longVar: Long = 9223372036854775807L
-    val floatVar: Float = 3.14f
-    val doubleVar: Double = 3.14159265358979323846
-    val charVar: Char = 'A'
-    val stringVar: String = "Hello, world!"
 ```
 
 ### String templates <a name="string-templates"></a>
