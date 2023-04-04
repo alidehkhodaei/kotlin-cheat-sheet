@@ -7,16 +7,18 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 
 
 - [Introduction](#introduction)
-- [Variables and Types](#variables-types)
+- [Variables, Operators and Types](#variables-operators-types)
   - [Var vs Val](#var-vs-val)
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
   - [Lazy and lateinit](#lazy-and-lateinit)
   - [Types](#types)
+  - [Operators](#operators)
 - [Control Flow](#control-flow)
   - [If-else](#if-else)
   - [When](#when)
   - [For loop](#for-loop)
+  - [Ranges](#ranges)
   - [While](#while)
   - [Do while](#do-while)
   - [Break and Continue](#break-and-continue)
@@ -25,6 +27,8 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Function Parameters](#function-parameters)
   - [Function Return Types](#function-return-type)
   - [Lambda Expressions](#lambda-expressions)
+  - [Extension Functions and Properties](#extension-functions-and-Properties)
+  - [Higher-Order Functions](#higher-order-functions)
   
 ## Introduction <a name="introduction"></a>
 Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others.
@@ -36,7 +40,7 @@ fun main() {
     println("Hello world")
 }
 ```
-## Variables and Types <a name="variables-types"></a>
+## Variables, Operators and Types <a name="variables-operators-types"></a>
 
 
 ### Var vs Val <a name="var-vs-val"></a>
@@ -138,6 +142,10 @@ Here's a brief overview of the most commonly used types:
     val stringVar: String = "Hello, world!"
 ```
 
+### Operators <a name="operators"></a>
+
+
+
 ## Control flow  <a name="control-flow"></a>
 
 ### If-else <a name="if-else"></a>
@@ -165,6 +173,39 @@ for (item in collection) {
 }
 ```
 
+### Ranges <a name="ranges"></a>
+There is a set of tools for defining ranges in Kotlin.
+```kotlin
+
+for(i in 0..3) {             
+    print(i)
+}
+
+for(i in 0 until 3) {       
+    print(i)
+}
+
+for(i in 2..8 step 2) {     
+    print(i)
+}
+
+for (i in 3 downTo 0) {     
+    print(i)
+}
+```
+Char ranges are also supported.
+```kotlin
+for (c in 'a'..'d') {   
+    print(c)
+}
+```
+Ranges are also useful in if statements.
+
+```kotlin
+if (x in 1..5) {           
+    print("x is in range from 1 to 5")
+}
+```
 ### While <a name="while"></a>
 ```kotlin  
 while (condition) {
@@ -235,4 +276,56 @@ fun multiply(a: Int, b: Int) = a * b
 val sum = { a: Int, b: Int -> a + b }
 
 val square: (Int) -> Int = { it * it }
+```
+### Extension Functions and Properties <a name="extension-functions-and-Properties"></a>
+Extension Functions and Properties in Kotlin allow adding new functionality or properties to existing classes without modifying their source code.
+```kotlin
+// Extension function
+fun String.reverse(): String {
+    return this.reversed()
+}
+
+// Extension property
+val String.firstChar: Char
+    get() = this[0]
+```
+```kotlin
+fun main() {
+    val str = "Ali"
+    println(str.reverse())  // Prints "ilA"
+    println(str.firstChar)  // Prints "A"
+}
+
+```
+### Higher-Order Functions <a name="higher-order-functions"></a>
+
+A higher-order function is a function that takes another function as parameter and/or returns a function.
+
+Taking Functions as Parameters
+```kotlin
+fun calculate(x: Int, y: Int, operation: (Int, Int) -> Int): Int { 
+    return operation(x, y)                                         
+}
+
+fun sum(x: Int, y: Int) = x + y                                 
+```
+```kotlin
+fun main() {
+    val sumResult = calculate(1, 7, ::sum)                         
+    val mulResult = calculate(1, 7) { a, b -> a * b }             
+}
+```
+Returning Functions
+```kotlin
+fun operation(): (Int) -> Int {                                     
+    return ::square
+}
+
+fun square(x: Int) = x * x                                          
+```
+```kotlin
+fun main() {
+    val func = operation()                                          
+    println(func(7))                                                
+}
 ```
