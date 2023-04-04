@@ -33,6 +33,8 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Extension Functions and Properties](#extension-functions-and-Properties)
   - [Higher-Order Functions](#higher-order-functions)
   - [Inline functions](#inline-functions)
+  - [Operator overloading](#operator-overloading)
+  - [Variable number of arguments (varargs)] (#varargs)
   
 ## Introduction <a name="introduction"></a>
 Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others.
@@ -455,5 +457,44 @@ fun main() {
 ```
 ### Inline functions <a name="inline-functions"></a>
 
+
+### Operator overloading <a name="operator-overloading"></a>
+Operator overloading in Kotlin allows you to define and use custom operators for your own classes and types.
+
+```kotlin
+data class Point(val x: Int, val y: Int) {
+    operator fun plus(other: Point): Point {
+        return Point(x + other.x, y + other.y)
+    }
+}
+```
+
+```kotlin
+fun main() {
+    val p1 = Point(1, 2)
+    val p2 = Point(3, 4)
+    val p3 = p1 + p2 // using the overloaded '+' operator
+    println(p3) // Output: Point(x=4, y=6)
+}
+
+```
+
+### Variable number of arguments (varargs) <a name="varargs"></a>
+
+ Varargs is a feature that allows you to pass a variable number of arguments of the same type to a function
+ 
+```kotlin
+fun printNumbers(vararg numbers: Int) {
+    for (number in numbers) {
+        println(number)
+    }
+}
+
+fun main() {
+    printNumbers(1, 2, 3) // prints 1, 2, 3
+    printNumbers(4, 5, 6, 7, 8) // prints 4, 5, 6, 7, 8
+}
+
+```
 
 
