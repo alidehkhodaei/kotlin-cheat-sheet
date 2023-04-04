@@ -8,7 +8,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 
 - [Introduction](#introduction)
   - [First Kotlin program](#first-kotlin-program)
-- [Variables, Operators and Types](#variables-operators-types)
+  - [Get input from user](#get-input-from-user)
   - [var vs val](#var-vs-val)
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
@@ -61,8 +61,16 @@ fun main() {
     println("Hello world")
 }
 ```
-## Variables, Operators and Types <a name="variables-operators-types"></a>
-
+### Get input from user  <a name="get-input-from-user"></a>
+To get input from the user in Kotlin, you can use the readLine() function.
+This is a example:
+```kotlin
+fun main() {
+    print("Enter your name: ")
+    val name = readLine()
+    println("Hello, $name!")
+}
+```
 
 ### var vs val <a name="var-vs-val"></a>
 In Kotlin, variables can be declared using either the var or val keyword.
