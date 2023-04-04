@@ -9,6 +9,8 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 - [Introduction](#introduction)
   - [First Kotlin program](#first-kotlin-program)
   - [Get input from user](#get-input-from-user)
+  - [Comments](#comments)
+  - [KDoc](#kdoc)
   - [var vs val](#var-vs-val)
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
@@ -42,11 +44,11 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Tail recursive functions](#tail-recursive-functions)
 
 - [Other Topics](#other)
-  -[Destructuring declarations](#destructuring-declarations)
-  -[Reflection](#reflection)
-  -[Annotations](#annotations)
-  -[Packages and imports](#packages-and-imports)
-  -[Null safety](#null-safety)
+  - [Destructuring declarations](#destructuring-declarations)
+  - [Reflection](#reflection)
+  - [Annotations](#annotations)
+  - [Packages and imports](#packages-and-imports)
+  - [Null safety](#null-safety)
   
   
 ## Introduction <a name="introduction"></a>
@@ -55,7 +57,7 @@ This cheat sheet will cover some of the essential Kotlin concepts.
 
 ### First Kotlin program <a name="first-kotlin-program"></a>
 
-Here's an example of printing "Hello world" in Kotlin:
+This is an example of printing "Hello world" in Kotlin:
 ```kotlin
 fun main() {
     println("Hello world")
@@ -63,12 +65,42 @@ fun main() {
 ```
 ### Get input from user  <a name="get-input-from-user"></a>
 To get input from the user in Kotlin, you can use the readLine() function.
-This is a example:
+This is an example:
 ```kotlin
 fun main() {
     print("Enter your name: ")
     val name = readLine()
     println("Hello, $name!")
+}
+```
+
+### Comments<a name="comments"></a>
+
+```kotlin
+// This is an end-of-line comment
+
+/* This is a block comment
+   on multiple lines. */
+```
+Block comments in Kotlin can be nested.
+```kotlin
+/* The comment starts here
+/* contains a nested comment *⁠/
+and ends here. */
+```
+### KDoc <a name="kdoc"></a>
+KDoc is the documentation format for Kotlin, similar to Javadoc for Java. KDoc is used to generate documentation for Kotlin classes, functions, and properties. KDoc comments start with the /** and end with */.
+This is an example:
+```kotlin
+/**
+ * Calculates the sum of two integers.
+ *
+ * @param a The first integer to add.
+ * @param b The second integer to add.
+ * @return The sum of the two integers.
+ */
+fun sum(a: Int, b: Int): Int {
+    return a + b
 }
 ```
 
