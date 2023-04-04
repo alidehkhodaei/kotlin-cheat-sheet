@@ -6,15 +6,30 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 # Table of Contents
 
 
-- [Variables](#variables)
+- [Introduction](#introduction)
+- [Variables and Types](#variables-types)
   - [Var vs Val](#var-vs-val)
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
   - [Lazy and lateinit](#lazy-and-lateinit)
-- [Types](#types)
+  - [Types](#types)
+- [Control Flow](#control-flow)
+  - [If-else](#if-else)
+  - [When](#when)
+  - [For loop](#for-loop)
+  - [While](#while)
+  - [Do while](#do-while)
+  - [Break and Continue](#break-and-continue)
+- [Functions](#functions)
+  - [Function Declaration](#function-declaration)
+  - [Function Parameters](#function-parameters)
+  - [Function Return Types](#function-return-type)
+  - [Lambda Expressions](#lambda-expressions)
   
+## Introduction <a name="introduction"></a>
+Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others. This cheat sheet will cover some of the essential Kotlin concepts.
 
-## Variables <a name="variables"></a>
+## Variables and Types <a name="variables-types"></a>
 
 
 ### Var vs Val <a name="var-vs-val"></a>
@@ -101,7 +116,7 @@ myLateInitVar = "Hello World"
 // Now we can access the variable without an exception
 println(myLateInitVar) // Prints "Hello World"
 ```
-## Types <a name="types"></a>
+### Types <a name="types"></a>
 Here's a brief overview of the most commonly used types:
 
 | Name | Description     | Example
@@ -119,3 +134,102 @@ Array |	A collection of elements of a particular type	| val myArray: Array<Int> 
 List	| A read-only collection that supports accessing elements by index	| val myList: List<String> = listOf("apple", "banana", "orange")
 Set	| A collection that contains no duplicate elements | val mySet: Set<Int> = setOf(1, 2, 3)
 Map |	A collection of key-value pairs |	val myMap: Map<String, Int> = mapOf("one" to 1, "two" to 2, "three" to 3)
+
+## Control flow  <a name="control-flow"></a>
+
+### If-else <a name="if-else"></a>
+
+```kotlin
+if (condition) {
+    // Code to execute if condition is true
+} else {
+    // Code to execute if condition is false
+}
+```
+### When <a name="when"></a>
+
+```kotlin
+when (value) {
+    condition1 -> // Code to execute if value matches condition1
+    condition2 -> // Code to execute if value matches condition2
+    else -> // Code to execute if value does not match any condition
+}
+```
+### For loop <a name="for-loop"></a>
+```kotlin
+for (item in collection) {
+    // Code to execute for each item in collection
+}
+```
+
+### While <a name="while"></a>
+```kotlin  
+while (condition) {
+    // Code to execute as long as condition is true
+}
+```
+
+### Do While <a name="do-while"></a>
+
+```kotlin
+do {
+    // Code to execute at least once
+} while (condition)
+```
+
+### Break and Continue <a name="break-and-continue"></a>
+
+```kotlin
+for (i in 1..10) {
+    if (i == 5) {
+        break // Exit loop when i is equal to 5
+    }
+    if (i % 2 == 0) {
+        continue // Skip even numbers and continue to the next iteration
+    }
+    // Code to execute for each odd number between 1 and 10
+}
+```
+
+## Functions <a name="functions"></a>
+
+### Function Declaration  <a name="function-declaration"></a>
+
+```kotlin
+fun sayHello() {
+    println("Hello!")
+}
+
+fun greet(name: String) {
+    println("Hello, $name!")
+}
+```
+
+### Function Parameters  <a name="function-parameters"></a>
+
+  ```kotlin
+  fun greet(name: String, age: Int) {
+    println("Hello, $name! You are $age years old.")
+}
+
+fun greet(name: String = "Ali", age: Int = 24) {
+    println("Hello, $name! You are $age years old.")
+}
+
+  ```
+### Function Return Types  <a name="function-return-type"></a>
+
+```kotlin
+fun add(a: Int, b: Int): Int {
+    return a + b
+}
+
+fun multiply(a: Int, b: Int) = a * b
+```
+### Lambda Expressions  <a name="lambda-expressions"></a>
+
+```kotlin
+val sum = { a: Int, b: Int -> a + b }
+
+val square: (Int) -> Int = { it * it }
+```
