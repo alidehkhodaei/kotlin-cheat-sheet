@@ -27,14 +27,15 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Exceptions](#exceptions)
 - [Functions](#functions)
   - [Function Declaration](#function-declaration)
-  - [Function Parameters](#function-parameters)
+  - [Default arguments and named arguments](#default-arguments-and-named-arguments)
   - [Function Return Types](#function-return-type)
+  - [Local functions](#local-functions)
   - [Lambda Expressions](#lambda-expressions)
   - [Extension Functions and Properties](#extension-functions-and-Properties)
   - [Higher-Order Functions](#higher-order-functions)
   - [Inline functions](#inline-functions)
   - [Operator overloading](#operator-overloading)
-  - [Variable number of arguments (varargs)] (#varargs)
+  - [Variable number of arguments (varargs)](#varargs)
   - [Infix notation](#infix-notation)
   - [Tail recursive functions](#tail-recursive-functions)
   
@@ -378,15 +379,22 @@ fun greet(name: String) {
 }
 ```
 
-### Function Parameters  <a name="function-parameters"></a>
+### Default arguments and named arguments  <a name="default-arguments-and-named-arguments"></a>
 
   ```kotlin
-  fun greet(name: String, age: Int) {
-    println("Hello, $name! You are $age years old.")
+fun greet(name: String = "World", greeting: String = "Hello") {
+    println("$greeting, $name!")
 }
 
-fun greet(name: String = "Ali", age: Int = 24) {
-    println("Hello, $name! You are $age years old.")
+fun main() {
+    // calling function with default arguments
+    greet() // output: Hello, World!
+
+    // calling function with named arguments
+    greet(greeting = "Hi", name = "Alice") // output: Hi, Alice!
+
+    // calling function with some named arguments
+    greet(name = "Bob") // output: Hello, Bob!
 }
 
   ```
@@ -399,6 +407,36 @@ fun add(a: Int, b: Int): Int {
 
 fun multiply(a: Int, b: Int) = a * b
 ```
+
+Unit-returning functions
+If a function does not return a useful value, its return type is Unit. Unit is a type with only one value - Unit. This value does not have to be returned explicitly.
+
+```kotlin
+fun printHello(): Unit {
+  print("Hello")
+}
+```
+Or
+```kotlin
+fun printHello() {
+   print("Hello")
+}
+```
+
+### Local functions <a name="local-functions"></a>
+
+Kotlin supports local functions, which are functions inside other functions.
+printMessage() is a local function defined within the main() function.
+```kotlin
+fun main() {
+    fun printMessage(message: String) {
+        println("Message: $message")
+    }
+
+    printMessage("Hello, world!")
+}
+```
+
 ### Lambda Expressions  <a name="lambda-expressions"></a>
 
 ```kotlin
