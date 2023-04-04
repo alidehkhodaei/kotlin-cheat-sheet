@@ -11,6 +11,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
   - [Lazy and lateinit](#lazy-and-lateinit)
+- [Types](#types)
   
 
 ## Variables <a name="variables"></a>
@@ -75,7 +76,7 @@ val b = a.toString() // b is now a String with value "5"
 
 ### Lazy and lateinit  <a name="lazy-and-lateinit"></a>
 
-A "lazy" variable is initialized only when it is first accessed.
+A lazy variable is initialized only when it is first accessed.
 
 ```kotlin
 val myLazyVar: String by lazy {
@@ -86,7 +87,7 @@ val myLazyVar: String by lazy {
 // The variable is not initialized until it is first accessed
 println(myLazyVar) // Prints "Hello World"
 ```
-A "lateinit" variable is used when you know that a variable will be initialized before it is used, but you don't want to assign an initial value at the time of declaration.
+A lateinit variable is used when you know that a variable will be initialized before it is used, but you don't want to assign an initial value at the time of declaration.
 
 ```kotlin
 lateinit var myLateInitVar: String
@@ -100,3 +101,21 @@ myLateInitVar = "Hello World"
 // Now we can access the variable without an exception
 println(myLateInitVar) // Prints "Hello World"
 ```
+## Types <a name="types"></a>
+Here's a brief overview of the most commonly used types:
+
+| Name | Description     | Example
+| :-------- | :------- |:---------
+Byte	| 8-bit signed integer |	val myByte: Byte = 10
+Short |	16-bit signed integer	| val myShort: Short = 100
+Int |	32-bit signed integer	| val myInt: Int = 1000
+Long	| 64-bit signed integer	| val myLong: Long = 1000000
+Float	| 32-bit floating point number	| val myFloat: Float = 3.14F
+Double |	64-bit floating point number	| val myDouble: Double = 3.14159
+Char	| A single Unicode character	| val myChar: Char = 'A'
+String	| A sequence of characters	| val myString: String = "Hello, world!"
+Boolean |	A logical value of true or false	| val myBool: Boolean = true
+Array |	A collection of elements of a particular type	| val myArray: Array<Int> = arrayOf(1, 2, 3)
+List	| A read-only collection that supports accessing elements by index	| val myList: List<String> = listOf("apple", "banana", "orange")
+Set	| A collection that contains no duplicate elements | val mySet: Set<Int> = setOf(1, 2, 3)
+Map |	A collection of key-value pairs |	val myMap: Map<String, Int> = mapOf("one" to 1, "two" to 2, "three" to 3)
