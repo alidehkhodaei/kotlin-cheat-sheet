@@ -16,6 +16,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Type Conversion](#type-conversion)
   - [Lazy and lateinit](#lazy-and-lateinit)
   - [Types](#types)
+  - [String templates](#string-templates)
   - [Operators](#operators)
 - [Control Flow](#control-flow)
   - [If-else](#if-else)
@@ -201,6 +202,13 @@ Here's a brief overview of the most commonly used types:
     val doubleVar: Double = 3.14159265358979323846
     val charVar: Char = 'A'
     val stringVar: String = "Hello, world!"
+```
+
+### String templates <a name="string-templates"></a>
+
+```kotlin
+val name= "Ali"
+val result= "My name is $name" 
 ```
 
 ### Operators <a name="operators"></a>
