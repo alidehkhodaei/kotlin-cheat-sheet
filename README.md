@@ -8,7 +8,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 
 - [Introduction](#introduction)
 - [Variables, Operators and Types](#variables-operators-types)
-  - [Var vs Val](#var-vs-val)
+  - [var vs val](#var-vs-val)
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
   - [Lazy and lateinit](#lazy-and-lateinit)
@@ -16,12 +16,14 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Operators](#operators)
 - [Control Flow](#control-flow)
   - [If-else](#if-else)
+  - [Conditional Expression](#conditional-expression)
   - [When](#when)
   - [For loop](#for-loop)
   - [Ranges](#ranges)
   - [While](#while)
   - [Do while](#do-while)
   - [Break and Continue](#break-and-continue)
+  - [Exceptions](#exceptions)
 - [Functions](#functions)
   - [Function Declaration](#function-declaration)
   - [Function Parameters](#function-parameters)
@@ -43,7 +45,7 @@ fun main() {
 ## Variables, Operators and Types <a name="variables-operators-types"></a>
 
 
-### Var vs Val <a name="var-vs-val"></a>
+### var vs val <a name="var-vs-val"></a>
 In Kotlin, variables can be declared using either the var or val keyword.
 
 var variables are mutable, meaning their value can be changed after they are initialized.
@@ -157,6 +159,14 @@ if (condition) {
     // Code to execute if condition is false
 }
 ```
+
+### Conditional Expression <a name="conditional-expression"></a>
+The syntax for conditional expressions is similar to that of the ternary operator in other programming languages.
+
+```kotlin
+val max = if (a > b) a else b         
+```
+
 ### When <a name="when"></a>
 
 ```kotlin
@@ -234,7 +244,30 @@ for (i in 1..10) {
     // Code to execute for each odd number between 1 and 10
 }
 ```
+### Exceptions  <a name="exceptions"></a>
 
+To throw an exception object, use the throw expression:
+
+```kotlin
+throw Exception("Exception...")
+```
+To catch an exception, use the try...catch expression:
+
+```kotlin
+try {
+    // some code
+} catch (e: SomeException) {
+    // handler
+} finally {
+    // optional finally block
+}
+```
+The Nothing type: This type has no values and is used to mark code locations that can never be reached. In your own code, you can use Nothing to mark a function that never returns.
+```kotlin
+fun fail(message: String): Nothing {
+    throw IllegalArgumentException(message)
+}
+```
 ## Functions <a name="functions"></a>
 
 ### Function Declaration  <a name="function-declaration"></a>
