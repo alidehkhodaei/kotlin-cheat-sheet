@@ -7,6 +7,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 
 
 - [Introduction](#introduction)
+  - [First Kotlin program](#first-kotlin-program)
 - [Variables, Operators and Types](#variables-operators-types)
   - [var vs val](#var-vs-val)
   - [Type Inference](#type-inference)
@@ -36,6 +37,8 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 ## Introduction <a name="introduction"></a>
 Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others.
 This cheat sheet will cover some of the essential Kotlin concepts.
+
+### First Kotlin program <a name="first-kotlin-program"></a>
 
 Here's an example of printing "Hello world" in Kotlin:
 ```kotlin
