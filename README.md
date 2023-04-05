@@ -63,7 +63,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Enum](#enum)
   - [Sealed class and interface](#sealed-class-and-interface)
   - [Generics](#generics)
-  - [Delegation](#delegation)
+  - [Delegation Pattern](#delegation-pattern)
   - [Delegated properties](#delegated-properties)
 - [Other Topics](#other)
   - [Destructuring declarations](#destructuring-declarations)
@@ -851,7 +851,6 @@ enum class Color {
 }
 ```
 
-
 ### Sealed class and interface <a name="sealed-class-and-interface"></a>
 
 A sealed class/interface restricts the inheritance of its subclasses/interfaces to only within the same file.
@@ -872,8 +871,8 @@ class Box<T>(t: T) {
 }
 ```
 
-### Delegation <a name="delegation"></a>
-The Delegation pattern has proven to be a good alternative to implementation inheritance, and Kotlin supports it natively requiring zero boilerplate code.
+### Delegation Pattern<a name="delegation-pattern"></a>
+Kotlin supports easy implementation of the delegation pattern on the native level without any boilerplate code.
 
 ```kotlin
 interface Base {
