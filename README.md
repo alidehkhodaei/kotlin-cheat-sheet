@@ -195,7 +195,6 @@ Kotlin provides several methods for converting between data types. Here's an exa
 
     val byte: Byte = 127
     val short: Short = byte.toShort() // Convert Byte to Short
-
 ```
 
 ### String templates <a name="string-templates"></a>
@@ -628,6 +627,13 @@ Tail recursive functions in Kotlin are functions that optimize memory usage by r
 val list = listOf(1, 2, 3, 4, 5)
 val list2=mutableListOf(1, 2, 3, 4, 5)
 ```
+Basic methods:
+```kotlin
+    val numbers = mutableListOf(1, 2, 3)
+    numbers.add(4) // Adds the specified element to the end of the list
+    numbers.remove(3) // Removes the first occurrence of the specified element from the list
+    numbers[1] // Returns the element at the specified index in the list
+```
 
 ### Map <a name="map"></a>
 
@@ -640,6 +646,14 @@ val map = mapOf(1 to "one", 2 to "two", 3 to "three")
 val map2= mutableListOf(1 to "one", 2 to "two", 3 to "three")
 ```
 
+Basic methods:
+```kotlin
+    val numbers =  mutableMapOf("one" to 1, "two" to 2, "three" to 3)
+    numbers.put("four", 4) // Associates the specified value with the specified key in the map
+    numbers.remove("two") // Removes the mapping for the specified key from the map if it is present
+    numbers.containsKey("two") // Returns true if the map contains the specified key
+```
+
 ### Set <a name="set"></a>
 
 - A collection of elements with no duplicates
@@ -649,6 +663,14 @@ val map2= mutableListOf(1 to "one", 2 to "two", 3 to "three")
 ```kotlin
 val set = setOf(1, 2, 3, 4, 5)
 val set2=mutableSetOf(1, 2, 3, 4, 5)
+```
+
+Basic methods:
+```kotlin
+    val numbers =  mutableSetOf(1, 2, 3)
+    numbers.add(4) // Adds the specified element to the set if it is not already present
+    numbers.remove(3) // Removes the specified element from the set if it is present
+    numbers.contains(1) //  Returns true if the set contains the specified element
 ```
 
 ## Class and Object <a name="class-and-object"></a>
