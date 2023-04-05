@@ -51,7 +51,18 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 - [Classes and objects](#classes-and-objects)
  - [Classes](#classes)
  - [Property and methods](#property-and-methods)
+ - [Visibility modifiers](#visibility-modifiers)
+ - [Inheritance](#inheritance)
+ - [Interface and Abstract Class](#interface-and-abstract-class)
+ - [Abstraction](#abstraction)
+ - [Polymorphism](#polymorphism)
+ - [Object Expression and Declaration](#object-expression-and-declaration)
+ - [Data class](#data-class)
+ - [Nested and Inner class](#nested-and-inner-class)
+ - [Type aliases](#type-aliases)
+ - [Enum](#enum)
  - [Sealed class and interface](#sealed-class-and-interface)
+ - [Generics](#generics)
 
 - [Other Topics](#other)
   - [Destructuring declarations](#destructuring-declarations)
@@ -863,6 +874,13 @@ class Circle: Shape()
 // Can't subclass Shape outside of this file
 ```
 
+### Generics <a name="generics"></a>
+A generic concept in Kotlin allows for type-safe programming by creating reusable classes, functions, and interfaces that can work with any data type.
+```kotlin
+class Box<T>(t: T) {
+    var value = t
+}
+```
 
 ## Other Topics <a name="Other-topics"></a>
 
