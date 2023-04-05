@@ -1,5 +1,5 @@
 # Kotlin Cheatsheet
-Kotlin is a modern, multi-paradigm programming language that runs on the Java Virtual Machine (JVM) and is designed to be more concise and safer than Java. A Kotlin cheat sheet is a quick reference guide that provides a concise summary of the most important Kotlin syntax and features. If you'd like to support me, please give a star to this repository.⭐🙏
+A Kotlin cheat sheet is a quick reference guide that provides a concise summary of the most important Kotlin syntax and features. Most of the content in this cheat sheet has been collected from the official Kotlin documentation while avoiding detailed explanations. This cheat sheet is designed for quick review purposes and not for providing detailed information, so I suggest that you also read the official Kotlin documentation. If you'd like to support me, please give a star to this repository.⭐
 
 ![Kotlin logotype](https://github.com/alidehkhodaei/kotlin-cheatsheet/blob/add-cheatsheet/images/kotlin_logotype.jpg)
 
