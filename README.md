@@ -15,7 +15,6 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Data types](#data-types)
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
-  - [Lazy and lateinit](#lazy-and-lateinit)
   - [String templates](#string-templates)
   - [Operators](#operators)
 - [Control Flow](#control-flow)
@@ -238,11 +237,6 @@ Arithmetic operators
   println(c <= d) // Prints "false"
   println(c == d) // Prints "false"
   println(c != d) // Prints "true"
-  val e = Integer(10)
-  val f = Integer(10)
-  println(e === f) // Prints "false"
-  val g = e
-  println(e === g) // Prints "true"
  ```
   
 Assignment operators
@@ -258,7 +252,7 @@ Assignment operators
   h /= 4
   println(h) // Prints "5"
   h %= 3
-  println(h) // Prints "2"
+  println(h) // Prints "1"
  ```
     
 Logical operators    
@@ -278,17 +272,8 @@ Bitwise operators
   println(k and l) // Prints "8" (0b1000)
   println(k or l) // Prints "14" (0b1110)
   println(k xor l) // Prints "6" (0b0110)
-  println(k.inv()) // Prints "-11" (0b11111111111111111111111111110101)
  ```
 
-Elvis operator
-
- ```kotlin
-  val m: String? = null
-  val n = m ?: "default"
-  println(n) // Prints "default"
-```
-    
 Range operator
 
 ```kotlin
@@ -297,14 +282,6 @@ Range operator
   println(o.contains(11)) // Prints "false"
 ```
     
- In operator
- 
- ```kotlin
-  val p = arrayOf("apple", "banana", "orange")
-  println("apple" in p) // Prints "true"
-  println("grape" in p) // Prints "false"
-```
-
 ## Control flow  <a name="control-flow"></a>
 
 ### If-else <a name="if-else"></a>
