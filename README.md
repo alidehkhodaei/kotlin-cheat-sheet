@@ -48,7 +48,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [List](#list)
   - [Map](#map)
   - [Set](#set)  
-- [Classes and objects](#classes-and-objects)
+- [Classes and objects](#class-and-object)
   - [Classes](#classes)
   - [Property and methods](#property-and-methods)
   - [Visibility modifiers](#visibility-modifiers)
@@ -66,12 +66,14 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Generics](#generics)
   - [Delegation Pattern](#delegation-pattern)
   - [Delegated properties](#delegated-properties)
-- [Other Topics](#other)
+- [Other Topics](#other-topics)
   - [Destructuring declarations](#destructuring-declarations)
   - [Reflection](#reflection)
   - [Annotations](#annotations)
   - [Packages and imports](#packages-and-imports)
   - [Null safety](#null-safety)
+ - <a href="https://kotlinlang.org/docs/keyword-reference.html">Kotlin Keywords and operators (Document link)</a>
+
  
   
 ## Introduction <a name="introduction"></a>
@@ -668,7 +670,7 @@ Tail recursive functions in Kotlin are functions that optimize memory usage by r
 
 ```
 
-## Collections <a name="collection"></a>
+## Collections <a name="collections"></a>
 
 ### List <a name="list"></a>
 
@@ -966,7 +968,7 @@ fun main() {
 }
 ```
 
-### Delegated properties <a name="delegation-property"></a>
+### Delegated properties <a name="delegated-properties"></a>
 Delegated properties in Kotlin allow the definition of custom getters and setters for a property that can be delegated to another object, such as the lazy initialization of a property.
 
 A lazy variable is initialized only when it is first accessed.
@@ -979,7 +981,7 @@ val myLazyVar: String by lazy {
 println(myLazyVar) // Prints "Hello World"
 ```
 
-## Other Topics <a name="Other-topics"></a>
+## Other Topics <a name="other-topics"></a>
 
 ### Destructuring declarations <a name="destructuring-declarations"></a>
 Destructuring declarations in Kotlin allow you to break down objects into individual variables in a single line of code.
@@ -1065,4 +1067,4 @@ Kotlin has null safety, which helps prevent null pointer exceptions. Kotlin prov
     // this would not compile because nonNullStr is not nullable
     // nonNullStr = null
 
-```
+```  
