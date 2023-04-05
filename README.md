@@ -16,6 +16,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Type Inference](#type-inference)
   - [Type Conversion](#type-conversion)
   - [String templates](#string-templates)
+  - [Character escape](#character-escape)
   - [Operators](#operators)
 - [Control Flow](#control-flow)
   - [If-else](#if-else)
@@ -43,7 +44,14 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Infix notation](#infix-notation)
   - [Tail recursive functions](#tail-recursive-functions)
 - [Collections](#collections)  
+  - [List](#list)
+  - [Map](#map)
+  - [Set](#set)
+  - [Common methods for collections](#common-methods-for-collections)
 - [Classes and objects](#classes-and-objects)
+ - [Classes](#classes)
+ - [Property and methods](#property-and-methods)
+ - [Sealed class and interface](#sealed-class-and-interface)
 
 - [Other Topics](#other)
   - [Destructuring declarations](#destructuring-declarations)
@@ -51,7 +59,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Annotations](#annotations)
   - [Packages and imports](#packages-and-imports)
   - [Null safety](#null-safety)
-  
+ 
   
 ## Introduction <a name="introduction"></a>
 Kotlin is a modern, open-source programming language that is used for building multi-platform applications. It is concise, expressive, and powerful, with features such as null safety, extension functions, lambdas, and many others.
@@ -211,6 +219,14 @@ println(myLateInitVar) // Prints "Hello World"
 ```kotlin
 val name= "Ali"
 val result= "My name is $name" 
+```
+
+### Character escape <a name="character-escape"></a>
+
+```kotlin
+\n insert new line
+\t inserts a tab
+\r inserts carriage return
 ```
 
 ### Operators <a name="operators"></a>
@@ -599,7 +615,7 @@ fun main() {
 
 Infix in Kotlin allows you to define functions that can be called using infix notation (i.e., without using parentheses and the dot notation).
 
-``kotlin
+```kotlin
 infix fun Int.times(str: String) = str.repeat(this)
 
 fun main() {
@@ -615,6 +631,239 @@ Tail recursive functions in Kotlin are functions that optimize memory usage by r
 ```kotlin
 
 ```
+
+## Collections <a name="collection"></a>
+
+### List <a name="list"></a>
+
+- A collection of elements in a specified order
+- Can have duplicates
+- Immutable: listOf(), or mutable: mutableListOf()
+
+```kotlin
+val list = listOf(1, 2, 3, 4, 5)
+val list2=mutableListOf(1, 2, 3, 4, 5)
+```
+
+### Map <a name="map"></a>
+
+- A collection of key-value pairs
+- Keys must be unique
+- Immutable: mapOf(), or mutable: mutableMapOf()
+
+```kotlin
+val map = mapOf(1 to "one", 2 to "two", 3 to "three")
+val map2= mutableListOf(1 to "one", 2 to "two", 3 to "three")
+```
+
+### Set <a name="set"></a>
+
+- A collection of elements with no duplicates
+- Elements are not in a specific order
+- Immutable: setOf(), or mutable: mutableSetOf
+
+```kotlin
+val set = setOf(1, 2, 3, 4, 5)
+val set2=mutableSetOf(1, 2, 3, 4, 5)
+```
+
+## Class and Object <a name="class-and-object"></a>
+
+### Classes <a name="classes"></a>
+
+- A class is a blueprint for creating objects.
+- An object is an instance of a class.
+
+```kotlin
+class Person(val name: String, var age: Int) // class
+
+val person = Person("Ali", 24) // object
+```
+
+### Property and methods <a name="property-and-methods"></a>
+
+- Properties are variables that are part of a class/object.
+- Methods are functions that are part of a class/object.
+
+```kotlin
+class Person(val name: String) {
+   var age = 0 // property
+
+   fun sayHello() { // method
+      println("Hello, my name is $name")
+   }
+}
+
+val person = Person("John")
+person.age = 25
+person.sayHello()
+```
+
+### Visibility modifiers(#visibility-modifiers)
+
+- private: restricts visibility to the same class.
+- protected: restricts visibility to the same class and its subclasses.
+- internal: restricts visibility to the same module.
+- public: allows visibility from anywhere.
+
+### Inheritance <a name="inheritance"></a>
+Inheritance is the process by which one class acquires the properties and methods of another class.
+
+```kotlin
+open class Animal(val name: String) {
+   open fun makeSound() {
+      println("Animal sound")
+   }
+}
+
+class Dog(name: String): Animal(name) {
+   override fun makeSound() {
+      println("Woof!")
+   }
+}
+```
+
+### Interface and Abstract Class(#interface-and-abstract-class)
+Both interface and abstract class provide a way to define contracts or blueprints for classes to follow. They are used for abstraction.
+
+```kotlin
+interface Vehicle {
+    fun start()
+    fun stop()
+    val name: String
+}
+```
+```kotlin
+abstract class Animal {
+    abstract fun makeSound()
+    open fun move() {
+        println("Moving...")
+    }
+}
+```
+
+### Abstraction <a name="abstraction"></a>
+Abstraction is a mechanism for hiding the implementation details of an object and exposing only the necessary details to the user. In Kotlin, abstraction is achieved through interfaces and abstract classes.
+
+### Polymorphism <a name="polymorphism"></a>
+Polymorphism is the ability of an object to take many forms.
+```kotlin
+class Dog : Animal() {
+    override fun makeSound() {
+        println("Woof!")
+    }
+}
+
+class Cat : Animal() {
+    override fun makeSound() {
+        println("Meow!")
+    }
+}
+```
+In this example, both Dog and Cat classes inherit from the Animal abstract class and provide their own implementation of the makeSound() method, which demonstrates polymorphism.
+
+### Object Expression and Declaration <a name="object-expression-and-declaration"></a>
+
+An object expression creates an instance of an anonymous class, while an object declaration creates a singleton instance of a class. 
+
+```kotlin
+val person = object {
+    val name = "Ali"
+    fun sayHello() {
+        println("Hello, my name is $name")
+    }
+}
+
+object Singleton {
+    fun doSomething() {
+        println("Doing something...")
+    }
+}
+```
+
+Companion objects
+An object declaration inside a class can be marked with the companion keyword.
+```kotlin
+class MyClass {
+    companion object { }
+}
+```
+
+### Data class <a name="data-class"></a>
+A data class is a special class that is designed to hold data.
+
+```kotlin
+data class Person(val name: String, var age: Int)
+
+val person = Person("Ali", 24)
+```
+
+### Nested and Inner class <a name="nested-and-inner-class"></a>
+
+- A nested class is a class that is defined inside another class.
+- An inner class is a nested class that has access to the members of the outer class.
+
+```kotlin
+class Outer {
+   private val outerProperty = "Outer property"
+
+   class Nested {
+      fun foo() {
+         // can't access outerProperty
+      }
+   }
+
+   inner class Inner {
+      fun bar() {
+         println(outerProperty) // can access outerProperty
+      }
+   }
+}
+```
+
+### Type aliases <a name="type-aliases"></a>
+Type aliases provide alternative names for existing types. If the type name is too long you can introduce a different shorter name and use the new one instead.
+
+Before using a type alias
+```kotlin
+val numbers = listOf(1, 2, 3, 4, 5)
+numbers.filter { number: Int -> number % 2 == 0 }.map { number: Int -> "Number is $number" }
+```
+
+After using a type alias
+```kotlin
+typealias NumberPredicate = (Int) -> Boolean
+typealias NumberMapper = (Int) -> String
+
+val numbers = listOf(1, 2, 3, 4, 5)
+val even: NumberPredicate = { number -> number % 2 == 0 }
+val mapper: NumberMapper = { number -> "Number is $number" }
+numbers.filter(even).map(mapper)
+```
+
+### Enum  <a name="enum"></a>
+An enum is a type that represents a fixed set of values.
+
+```kolitn
+enum class Color {
+   RED, GREEN, BLUE
+}
+```
+
+
+### Sealed class and interface <a name="sealed-class-and-interface"></a>
+
+A sealed class/interface restricts the inheritance of its subclasses/interfaces to only within the same file.
+
+```kotlin
+sealed class Shape
+
+class Circle: Shape()
+
+// Can't subclass Shape outside of this file
+```
+
+
 ## Other Topics <a name="Other-topics"></a>
 
 ### Destructuring declarations <a name="destructuring-declarations"></a>
