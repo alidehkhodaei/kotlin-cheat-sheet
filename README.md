@@ -46,24 +46,22 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
 - [Collections](#collections)  
   - [List](#list)
   - [Map](#map)
-  - [Set](#set)
-  - [Common methods for collections](#common-methods-for-collections)
+  - [Set](#set)  
 - [Classes and objects](#classes-and-objects)
- - [Classes](#classes)
- - [Property and methods](#property-and-methods)
- - [Visibility modifiers](#visibility-modifiers)
- - [Inheritance](#inheritance)
- - [Interface and Abstract Class](#interface-and-abstract-class)
- - [Abstraction](#abstraction)
- - [Polymorphism](#polymorphism)
- - [Object Expression and Declaration](#object-expression-and-declaration)
- - [Data class](#data-class)
- - [Nested and Inner class](#nested-and-inner-class)
- - [Type aliases](#type-aliases)
- - [Enum](#enum)
- - [Sealed class and interface](#sealed-class-and-interface)
- - [Generics](#generics)
-
+  - [Classes](#classes)
+  - [Property and methods](#property-and-methods)
+  - [Visibility modifiers](#visibility-modifiers)
+  - [Inheritance](#inheritance)
+  - [Interface and Abstract Class](#interface-and-abstract-class)
+  - [Abstraction](#abstraction)
+  - [Polymorphism](#polymorphism)
+  - [Object Expression and Declaration](#object-expression-and-declaration)
+  - [Data class](#data-class)
+  - [Nested and Inner class](#nested-and-inner-class)
+  - [Type aliases](#type-aliases)
+  - [Enum](#enum)
+  - [Sealed class and interface](#sealed-class-and-interface)
+  - [Generics](#generics)
 - [Other Topics](#other)
   - [Destructuring declarations](#destructuring-declarations)
   - [Reflection](#reflection)
@@ -710,7 +708,7 @@ person.age = 25
 person.sayHello()
 ```
 
-### Visibility modifiers(#visibility-modifiers)
+### Visibility modifiers <a name="visibility-modifiers" ></a>
 
 - private: restricts visibility to the same class.
 - protected: restricts visibility to the same class and its subclasses.
@@ -734,7 +732,7 @@ class Dog(name: String): Animal(name) {
 }
 ```
 
-### Interface and Abstract Class(#interface-and-abstract-class)
+### Interface and Abstract Class <a name="interface-and-abstract-class"></a>
 Both interface and abstract class provide a way to define contracts or blueprints for classes to follow. They are used for abstraction.
 
 ```kotlin
