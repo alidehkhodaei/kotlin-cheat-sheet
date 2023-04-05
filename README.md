@@ -51,6 +51,7 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Classes](#classes)
   - [Property and methods](#property-and-methods)
   - [Visibility modifiers](#visibility-modifiers)
+  - [Late-initialized properties and variables](#late-initialized-properties-and-variables)
   - [Inheritance](#inheritance)
   - [Interface and Abstract Class](#interface-and-abstract-class)
   - [Abstraction](#abstraction)
@@ -193,34 +194,6 @@ Kotlin provides several methods for converting between data types. Here's an exa
     val byte: Byte = 127
     val short: Short = byte.toShort() // Convert Byte to Short
 
-```
-
-### Lazy and lateinit  <a name="lazy-and-lateinit"></a>
-
-A lazy variable is initialized only when it is first accessed.
-
-```kotlin
-val myLazyVar: String by lazy {
-    // Perform some expensive operation to initialize the variable
-    "Hello World"
-}
-
-// The variable is not initialized until it is first accessed
-println(myLazyVar) // Prints "Hello World"
-```
-A lateinit variable is used when you know that a variable will be initialized before it is used, but you don't want to assign an initial value at the time of declaration.
-
-```kotlin
-lateinit var myLateInitVar: String
-
-// The variable is not initialized yet, so trying to access it will throw an exception
-// println(myLateInitVar) // This line would throw a "lateinit property has not been initialized" exception
-
-// Sometime later, the variable is initialized
-myLateInitVar = "Hello World"
-
-// Now we can access the variable without an exception
-println(myLateInitVar) // Prints "Hello World"
 ```
 
 ### String templates <a name="string-templates"></a>
@@ -714,6 +687,23 @@ person.sayHello()
 - protected: restricts visibility to the same class and its subclasses.
 - internal: restricts visibility to the same module.
 - public: allows visibility from anywhere.
+
+### Late-initialized properties and variables <a name="late-initialized-properties-and-variables"</a>
+
+A lateinit variable is used when you know that a variable will be initialized before it is used, but you don't want to assign an initial value at the time of declaration.
+
+```kotlin
+lateinit var myLateInitVar: String
+
+// The variable is not initialized yet, so trying to access it will throw an exception
+// println(myLateInitVar) // This line would throw a "lateinit property has not been initialized" exception
+
+// Sometime later, the variable is initialized
+myLateInitVar = "Hello World"
+
+// Now we can access the variable without an exception
+println(myLateInitVar) // Prints "Hello World"
+```
 
 ### Inheritance <a name="inheritance"></a>
 Inheritance is the process by which one class acquires the properties and methods of another class.
