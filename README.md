@@ -63,6 +63,8 @@ Kotlin is a modern, multi-paradigm programming language that runs on the Java Vi
   - [Enum](#enum)
   - [Sealed class and interface](#sealed-class-and-interface)
   - [Generics](#generics)
+  - [Delegation](#delegation)
+  - [Delegated properties](#delegated-properties)
 - [Other Topics](#other)
   - [Destructuring declarations](#destructuring-declarations)
   - [Reflection](#reflection)
@@ -688,7 +690,7 @@ person.sayHello()
 - internal: restricts visibility to the same module.
 - public: allows visibility from anywhere.
 
-### Late-initialized properties and variables <a name="late-initialized-properties-and-variables"</a>
+### Late-initialized properties and variables <a name="late-initialized-properties-and-variables"></a>
 
 A lateinit variable is used when you know that a variable will be initialized before it is used, but you don't want to assign an initial value at the time of declaration.
 
@@ -868,6 +870,39 @@ A generic concept in Kotlin allows for type-safe programming by creating reusabl
 class Box<T>(t: T) {
     var value = t
 }
+```
+
+### Delegation <a name="delegation"></a>
+The Delegation pattern has proven to be a good alternative to implementation inheritance, and Kotlin supports it natively requiring zero boilerplate code.
+
+```kotlin
+interface Base {
+    fun print()
+}
+
+class BaseImpl(val x: Int) : Base {
+    override fun print() { print(x) }
+}
+
+class Derived(b: Base) : Base by b
+
+fun main() {
+    val b = BaseImpl(10)
+    Derived(b).print()
+}
+```
+
+### Delegated properties <a name="delegation-property"></a>
+Delegated properties in Kotlin allow the definition of custom getters and setters for a property that can be delegated to another object, such as the lazy initialization of a property.
+
+A lazy variable is initialized only when it is first accessed.
+```kotlin
+val myLazyVar: String by lazy {
+    // Perform some expensive operation to initialize the variable
+    "Hello World"
+}
+// The variable is not initialized until it is first accessed
+println(myLazyVar) // Prints "Hello World"
 ```
 
 ## Other Topics <a name="Other-topics"></a>
