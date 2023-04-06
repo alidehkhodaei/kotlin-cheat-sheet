@@ -195,7 +195,7 @@ Kotlin provides several methods for converting between data types. Here's an exa
     val strBol: String = bol.toString() // Convert Boolean to String
 
     val char: Char = 'A'
-    val intChar: Int = char.toInt() // Convert Char to Int
+    val intChar: Int = char.toInt() // Convert Char to Int // Conversion of Char to Number is deprecated. Use Char.code property instead.
 
     val byte: Byte = 127
     val short: Short = byte.toShort() // Convert Byte to Short
@@ -777,7 +777,7 @@ Getter and setter in Kotlin are accessors used to retrieve and modify the value 
 ```kotlin
 class Person {
     var name: String = ""
-        get() = field.toUpperCase()
+        get() = field.uppercase(Locale.getDefault())
         set(value) {
             field = "Name: $value"
         }
