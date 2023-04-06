@@ -679,6 +679,10 @@ Tail recursive functions in Kotlin are functions that optimize memory usage by r
 - A collection of elements in a specified order
 - Can have duplicates
 - Immutable: listOf(), or mutable: mutableListOf()
+- List: This is the basic interface for a read-only list of elements.
+- MutableList: This is a subinterface of List that allows for mutable operations such as adding or removing elements.
+- ArrayList: This is an implementation of MutableList that uses an array to store elements.
+- LinkedList: This is an implementation of MutableList that uses a linked list to store elements.
 
 ```kotlin
 val list = listOf(1, 2, 3, 4, 5)
@@ -697,6 +701,12 @@ Basic methods:
 - A collection of key-value pairs
 - Keys must be unique
 - Immutable: mapOf(), or mutable: mutableMapOf()
+- Map: This is the basic interface for a read-only map of key-value pairs.
+- MutableMap: This is a subinterface of Map that allows for mutable operations such as adding or removing key-value pairs.
+- HashMap: This is an implementation of MutableMap that uses a hash table to store key-value pairs.
+- LinkedHashMap: This is an implementation of MutableMap that maintains the insertion order of key-value pairs.
+- SortedMap: This is an interface for a map that maintains its key-value pairs in sorted order.
+- TreeMap: This is an implementation of SortedMap.
 
 ```kotlin
 val map = mapOf(1 to "one", 2 to "two", 3 to "three")
@@ -716,6 +726,13 @@ Basic methods:
 - A collection of elements with no duplicates
 - Elements are not in a specific order
 - Immutable: setOf(), or mutable: mutableSetOf
+- Set: This is the basic interface for a read-only set of elements.
+- MutableSet: This is a subinterface of Set that allows for mutable operations such as adding or removing elements.
+- HashSet: This is an implementation of MutableSet that uses a hash table to store elements. 
+- LinkedHashSet: This is an implementation of MutableSet that maintains the insertion order of elements.
+- SortedSet: This is an interface for a set that maintains its elements in sorted order.
+- TreeSet: This is an implementation of SortedSet.
+
 
 ```kotlin
 val set = setOf(1, 2, 3, 4, 5)
@@ -729,6 +746,7 @@ Basic methods:
     numbers.remove(3) // Removes the specified element from the set if it is present
     numbers.contains(1) //  Returns true if the set contains the specified element
 ```
+Please for more collections and detaile read doc.
 
 ## Class and Object <a name="class-and-object"></a>
 
