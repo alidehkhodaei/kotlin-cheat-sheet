@@ -38,12 +38,10 @@ A Kotlin cheat sheet is a quick reference guide that provides a concise summary 
   - [Lambda Expressions](#lambda-expressions)
   - [Extension Functions and Properties](#extension-functions-and-Properties)
   - [Higher-Order Functions](#higher-order-functions)
-  - [Inline functions](#inline-functions)
   - [Operator overloading](#operator-overloading)
   - [Variable number of arguments (varargs)](#varargs)
   - [Infix notation](#infix-notation)
   - [Scope Functions](#scope-functions)
-  - [Tail recursive functions](#tail-recursive-functions)
 - [Collections](#collections)  
   - [List](#list)
   - [Map](#map)
@@ -557,8 +555,6 @@ fun main() {
     println(func(7))                                                
 }
 ```
-### Inline functions <a name="inline-functions"></a>
-
 
 ### Operator overloading <a name="operator-overloading"></a>
 Operator overloading in Kotlin allows you to define and use custom operators for your own classes and types.
@@ -663,13 +659,6 @@ val message: String? = "Hello"
 message?.also {
     print(it.toUpperCase()) // Output: "HELLO"
 }
-```
-### Tail recursive functions <a name="tail-recursive-functions"></a>
-
-Tail recursive functions in Kotlin are functions that optimize memory usage by reusing the same stack frame for each recursive call.
-
-```kotlin
-
 ```
 
 ## Collections <a name="collections"></a>
