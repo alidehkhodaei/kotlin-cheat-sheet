@@ -72,6 +72,7 @@ A Kotlin cheat sheet is a quick reference guide that provides a concise summary 
   - [Annotations](#annotations)
   - [Packages and imports](#packages-and-imports)
   - [Null safety](#null-safety)
+  - [Equality](#equality)
  - <a href="https://kotlinlang.org/docs/keyword-reference.html">Kotlin Keywords and operators (Document link)</a>
 
  
@@ -1068,3 +1069,42 @@ Kotlin has null safety, which helps prevent null pointer exceptions. Kotlin prov
     // nonNullStr = null
 
 ```  
+### Equality <a name="equality"></a>
+
+In Kotlin there are two types of equality:
+
+- Structural equality (== - a check for equals())
+
+- Referential equality (=== - two references point to the same object)
+
+```kotlin
+data class Person(val name:String,val age:Int)
+
+val person1=Person("Ali",24)
+val person2=Person("Reza",27)
+var person3=Person("Ali",24)
+
+print(person1==person2) // false
+print(person1!=person2) // true
+print(person1===person2) // false
+print(person1==person3) // true
+print(person1===person3) // flase
+print(person1!==person3) // true
+
+person3=person1
+
+print(person1===person3) // true
+
+```
+- The == operator in Kotlin is equivalent to calling the equals() method.
+- Data classes generate an equals() method based on their properties, but regular classes do not.
+- To compare objects for equality based on their contents, you need to override the equals() method for regular classes.
+```kotlin
+class Test{
+    var name:String=""
+    override fun equals(other: Any?): Boolean {
+        return this.name==(other as Test).name
+    }
+}
+```
+Please for more detaile read <a href="https://kotlinlang.org/docs/equality.html">doc</a>.
