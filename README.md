@@ -1,7 +1,7 @@
 # Kotlin Cheatsheet
 A Kotlin cheat sheet is a quick reference guide that provides a concise summary of the most important Kotlin syntax and features. Most of the content in this cheat sheet has been collected from the official Kotlin documentation while avoiding detailed explanations. This cheat sheet is designed for quick review purposes and not for providing detailed information, so I suggest that you also read the official Kotlin documentation. If you'd like to support me, please give a star to this repository.⭐
 
-![Kotlin logotype](https://github.com/alidehkhodaei/kotlin-cheatsheet/blob/main/images/kotlin_logotype.jpg)
+![Kotlin logotype](https://github.com/alidehkhodaei/kotlin-cheatsheet/raw/main/images/kotlin_logotype.jpg)
 
 # Table of Contents
 
