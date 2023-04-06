@@ -49,6 +49,7 @@ A Kotlin cheat sheet is a quick reference guide that provides a concise summary 
 - [Classes and objects](#class-and-object)
   - [Classes](#classes)
   - [Property and methods](#property-and-methods)
+  - [Getters and setters](#getters-and-setters)
   - [Visibility modifiers](#visibility-modifiers)
   - [Late-initialized properties and variables](#late-initialized-properties-and-variables)
   - [Inheritance](#inheritance)
@@ -767,6 +768,20 @@ class Person(val name: String) {
 val person = Person("John")
 person.age = 25
 person.sayHello()
+```
+
+### Getters and setters <a name="getters-and-setters" ></a>
+
+Getter and setter in Kotlin are accessors used to retrieve and modify the value of a variable, respectively.
+
+```kotlin
+class Person {
+    var name: String = ""
+        get() = field.toUpperCase()
+        set(value) {
+            field = "Name: $value"
+        }
+}
 ```
 
 ### Visibility modifiers <a name="visibility-modifiers" ></a>
