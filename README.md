@@ -73,6 +73,7 @@ A Kotlin cheat sheet is a quick reference guide that provides a concise summary 
   - [Packages and imports](#packages-and-imports)
   - [Null safety](#null-safety)
   - [Equality](#equality)
+  - [Comparable](#comparable)
  - <a href="https://kotlinlang.org/docs/keyword-reference.html">Kotlin Keywords and operators (Document link)</a>
 
  
@@ -1108,3 +1109,33 @@ class Test{
 }
 ```
 Please for more detaile read <a href="https://kotlinlang.org/docs/equality.html">doc</a>.
+
+### Comparable <a name="comparable"></a>
+You can compare objects using the Comparable interface. This interface defines a compareTo method that compares the current object with another object and returns an integer value that indicates the order of the objects.
+
+```kotlin
+class Person(val name: String, val age: Int) : Comparable<Person> {
+    override fun compareTo(other: Person): Int {
+        return this.age.compareTo(other.age)
+    }
+}
+```
+```kotlin
+val person1 = Person("Ali", 24)
+val person2 = Person("Reza", 30)
+
+if (person1 < person2) {
+    println("${person1.name} is younger than ${person2.name}")
+} else {
+    println("${person1.name} is older than ${person2.name}")
+}
+```
+When you use the sorted() or sort() function to sort a list of objects, Kotlin uses the compareTo() method of the objects to determine their natural order. If the objects in the list do not implement the Comparable interface, you will get a compile-time error.
+```kotlin
+val people = listOf(
+    Person("Ali", 24),
+    Person("Reza", 40),
+    Person("Shabnam", 23)
+)
+val sortedPeople = people.sorted() // [Person(name=Shabnam, age=23), Person(name=Ali, age=24), Person(name=Reza, age=40)]
+```
