@@ -1020,23 +1020,20 @@ Reflection is a set of language and library features that allows you to introspe
 This is a example:
 ```kotlin
 
-data class Person(val name: String, val age: Int)
+  // Obtain a Class object for the String class
+    val stringClass = String::class.java
 
-fun main() {
-    val person = Person("Ali", 24)
-    
-    // Get the class object of Person using reflection
-    val personClass = Person::class
-    
-    // Get the properties of Person using reflection
-    val properties = personClass.memberProperties
-    
-    // Print the values of the properties
-    properties.forEach { property ->
-        val value = property.get(person)
-        println("${property.name}: $value")
+    // Get the fields of the String class and print their names
+    val fields = stringClass.declaredFields
+    for (field in fields) {
+        println(field.name)
     }
-}
+
+    // Get the methods of the String class and print their names
+    val methods = stringClass.declaredMethods
+    for (method in methods) {
+        println(method.name)
+    }
 
 ```
 ### Annotations <a name="annotations"></a>
