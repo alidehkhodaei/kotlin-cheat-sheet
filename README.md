@@ -226,23 +226,23 @@ Arithmetic operators
 ```kotlin
   val a = 10
   val b = 5
-  println(a + b) // Prints "15"
-  println(a - b) // Prints "5"
-  println(a * b) // Prints "50"
-  println(a / b) // Prints "2"
-  println(a % b) // Prints "0"
+  println(a + b) // 15
+  println(a - b) // 5
+  println(a * b) // 50
+  println(a / b) // 2
+  println(a % b) // 0
  ```
   
  Comparison operators
 ```kotlin
   val c = 10
   val d = 5
-  println(c > d) // Prints "true"
-  println(c >= d) // Prints "true"
-  println(c < d) // Prints "false"
-  println(c <= d) // Prints "false"
-  println(c == d) // Prints "false"
-  println(c != d) // Prints "true"
+  println(c > d) // true
+  println(c >= d) // true
+  println(c < d) // false
+  println(c <= d) // false
+  println(c == d) // false
+  println(c != d) // true
  ```
   
 Assignment operators
@@ -250,24 +250,24 @@ Assignment operators
  ```kotlin
   var h = 10
   h += 5
-  println(h) // Prints "15"
+  println(h) // 15
   h -= 5
-  println(h) // Prints "10"
+  println(h) // 10
   h *= 2
-  println(h) // Prints "20"
+  println(h) // 20
   h /= 4
-  println(h) // Prints "5"
+  println(h) // 5
   h %= 3
-  println(h) // Prints "1"
+  println(h) // 1
  ```
     
 Logical operators    
 ```kotlin  
   val i = true
   val j = false
-  println(i && j) // Prints "false"
-  println(i || j) // Prints "true"
-  println(!i) // Prints "false"
+  println(i && j) // false
+  println(i || j) // true
+  println(!i) // false
  ```
     
 Bitwise operators
@@ -434,10 +434,10 @@ fun main() {
     greet() // output: Hello, World!
 
     // calling function with named arguments
-    greet(greeting = "Hi", name = "Alice") // output: Hi, Alice!
+    greet(greeting = "Hi", name = "Ali") // output: Hi, Ali!
 
     // calling function with some named arguments
-    greet(name = "Bob") // output: Hello, Bob!
+    greet(name = "Reza") // output: Hello, Reza!
 }
 
   ```
@@ -452,7 +452,7 @@ fun multiply(a: Int, b: Int) = a * b
 ```
 
 Unit-returning functions
-If a function does not return a useful value, its return type is Unit. Unit is a type with only one value - Unit. This value does not have to be returned explicitly.
+If a function does not return a value, its return type is Unit.
 
 ```kotlin
 fun printHello(): Unit {
@@ -486,7 +486,7 @@ A member function is a function that is defined inside a class or object.
 
 ```kotlin
 class Sample {
-    fun foo() { print("") }
+    fun foo() {//...}
 }
 ```
 
@@ -650,8 +650,8 @@ apply executes a block of code on an object and returns the object itself. Insid
 ```kotlin
 val person = Person("Ali", 24)
 person.apply {
-    name = "Jane"
-    age = 25
+    name = "Ali"
+    age = 24
 }
 ```
 
@@ -768,8 +768,8 @@ class Person(val name: String) {
    }
 }
 
-val person = Person("John")
-person.age = 25
+val person = Person("Ali")
+person.age = 24
 person.sayHello()
 ```
 
@@ -1063,7 +1063,7 @@ class Person(val name: String, val age: Int) {
 import com.example.models.Person
 
 fun main() {
-    val person = Person("John", 30)
+    val person = Person("Ali", 24)
     println("Name: ${person.name}, Age: ${person.age}")
 }
 ```
