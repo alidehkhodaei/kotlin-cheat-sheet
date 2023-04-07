@@ -531,7 +531,7 @@ fun main() {
 
 A higher-order function is a function that takes another function as parameter and/or returns a function.
 
-Taking Functions as Parameters
+- Taking Functions as Parameters
 ```kotlin
 fun calculate(x: Int, y: Int, operation: (Int, Int) -> Int): Int { 
     return operation(x, y)                                         
@@ -545,7 +545,7 @@ fun main() {
     val mulResult = calculate(1, 7) { a, b -> a * b }             
 }
 ```
-Returning Functions
+- Returning Functions
 ```kotlin
 fun operation(): (Int) -> Int {                                     
     return ::square
@@ -1136,7 +1136,7 @@ Please for more detaile read <a href="https://kotlinlang.org/docs/equality.html"
 You can compare objects using the Comparable interface. This interface defines a compareTo method that compares the current object with another object and returns an integer value that indicates the order of the objects.
 
 ```kotlin
-class Person(val name: String, val age: Int) : Comparable<Person> {
+data class Person(val name: String, val age: Int) : Comparable<Person> {
     override fun compareTo(other: Person): Int {
         return this.age.compareTo(other.age)
     }
@@ -1159,5 +1159,6 @@ val people = listOf(
     Person("Reza", 40),
     Person("Shabnam", 23)
 )
-val sortedPeople = people.sorted() // [Person(name=Shabnam, age=23), Person(name=Ali, age=24), Person(name=Reza, age=40)]
+val sortedPeople = people.sorted()
+println(sortedPeople) // [Person(name=Shabnam, age=23), Person(name=Ali, age=24), Person(name=Reza, age=40)]
 ```
