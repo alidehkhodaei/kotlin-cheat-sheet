@@ -532,6 +532,7 @@ fun main() {
 A higher-order function is a function that takes another function as parameter and/or returns a function.
 
 - Taking Functions as Parameters
+
 ```kotlin
 fun calculate(x: Int, y: Int, operation: (Int, Int) -> Int): Int { 
     return operation(x, y)                                         
@@ -539,13 +540,16 @@ fun calculate(x: Int, y: Int, operation: (Int, Int) -> Int): Int {
 
 fun sum(x: Int, y: Int) = x + y                                 
 ```
+
 ```kotlin
 fun main() {
     val sumResult = calculate(1, 7, ::sum)                         
     val mulResult = calculate(1, 7) { a, b -> a * b }             
 }
 ```
+
 - Returning Functions
+
 ```kotlin
 fun operation(): (Int) -> Int {                                     
     return ::square
@@ -553,6 +557,7 @@ fun operation(): (Int) -> Int {
 
 fun square(x: Int) = x * x                                          
 ```
+
 ```kotlin
 fun main() {
     val func = operation()                                          
