@@ -8,11 +8,8 @@ background-image: linear-gradient(120deg,#c2185b,#4a148c);
 a{
   color: #4a148c;
 }
-h2{
-  color: #4a148c;
-}
-h3{
-  color: #4a148c;
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+    color: #4a148c;
 }
 #my-title{
 display: none;
