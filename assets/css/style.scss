@@ -17,7 +17,10 @@ display: none;
 footer {
 visibility:hidden;
 }
-
+.highlight .err {
+    color: #a61717;
+    /* background-color: #e3d2d2; */
+}
 // Remove padding
 @media (min-width: 70em) {
 .main-content{
