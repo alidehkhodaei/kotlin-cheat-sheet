@@ -1,0 +1,20 @@
+---
+---
+@import "{{ site.theme }}";
+a{
+  color: #159957;
+}
+#my-title{
+display: none;
+}
+footer {
+visibility:hidden;
+}
+
+// Remove padding
+@media (min-width: 70em) {
+.main-content{
+padding: 0; 
+max-width: 90rem;
+}
+}
