@@ -1,0 +1,26 @@
+---
+---
+@import "{{ site.theme }}";
+a{
+  color: #159957;
+}
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+    color: #159957;
+}
+#my-title{
+display: none;
+}
+footer {
+visibility:hidden;
+}
+.highlight .err {
+    color: #000;
+    background-color: #ffffff00
+}
+// Remove padding
+@media (min-width: 70em) {
+.main-content{
+padding: 0; 
+max-width: 90rem;
+}
+}
