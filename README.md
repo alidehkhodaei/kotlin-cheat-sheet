@@ -734,18 +734,14 @@ names.forEach { name ->
 }
 ```
 
-- Array Methods
+- Basic methods
 ```kotlin
-// Get the index of the first occurrence of an element in an array
 val index = numbers.indexOf(3)
 
-// Sort an array
 numbers.sort()
 
-// Reverse an array
 names.reverse()
 ```
-
 
 ### List <a name="list"></a>
 
