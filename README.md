@@ -46,6 +46,7 @@ If there is any issue, please open an issue or feel free to contribute to its ex
   - [Infix notation](#infix-notation)
   - [Scope Functions](#scope-functions)
 - [Collections](#collections)  
+  - [Array](#array)
   - [List](#list)
   - [Map](#map)
   - [Set](#set)  
@@ -672,6 +673,79 @@ message?.also {
 ```
 
 ## Collections <a name="collections"></a>
+
+### Array <a name="array"></a>
+
+An array is a fixed-size collection of elements of the same data type.
+
+- Declaring and Initializing Arrays
+
+```kotlin
+
+// Declare an array of integers
+val numbers = arrayOf(1, 2, 3, 4, 5)
+
+// Declare an array of strings
+val names = arrayOf("Alice", "Bob", "Charlie", "Dave")
+
+// Declare an array of a specific size
+val emptyArray = arrayOfNulls<Int>(10)
+
+// Declare an array of integers with a specified size and initial value
+val array = Array<Int>(7) { i -> i*i }
+val filledArray = IntArray(5) { index -> index * 2 } // Other type: BooleanArray, ShortArray, DoubleArray and etc.
+
+```
+- Accessing Array Elements
+
+```kotlin
+// Access an element at a specific index
+val firstNumber = numbers[0]
+
+// Access the last element of an array
+val lastNumber = numbers[numbers.size - 1]
+```
+
+- Modifying Array Elements
+
+```kotlin
+// Modify an element at a specific index
+numbers[0] = 10
+
+// Fill an array with a specific value
+Arrays.fill(numbers, 0)
+```
+
+- Iterating over Arrays
+```kotlin
+// Iterate over an array using a for loop
+for (number in numbers) {
+    println(number)
+}
+
+// Iterate over an array using a for loop with an index
+for (i in names.indices) {
+    println("${i}: ${names[i]}")
+}
+
+// Iterate over an array using a forEach loop
+names.forEach { name ->
+    println(name)
+}
+```
+
+- Array Methods
+```kotlin
+// Get the index of the first occurrence of an element in an array
+val index = numbers.indexOf(3)
+
+// Sort an array
+numbers.sort()
+
+// Reverse an array
+names.reverse()
+```
+
 
 ### List <a name="list"></a>
 
