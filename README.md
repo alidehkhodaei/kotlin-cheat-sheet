@@ -76,7 +76,8 @@ If there is any issue, please open an issue or feel free to contribute to its ex
   - [Null safety](#null-safety)
   - [Equality](#equality)
   - [Comparable](#comparable)
- - <a href="https://kotlinlang.org/docs/keyword-reference.html">Kotlin Keywords and operators (Document link)</a>
+  - [Regex](#regex)
+- <a href="https://kotlinlang.org/docs/keyword-reference.html">Kotlin Keywords and operators (Document link)</a>
 
  
   
@@ -1166,4 +1167,46 @@ val people = listOf(
 )
 val sortedPeople = people.sorted()
 println(sortedPeople) // [Person(name=Shabnam, age=23), Person(name=Ali, age=24), Person(name=Reza, age=40)]
+```
+### Regex <a name="regex"></a>
+
+Regex, short for regular expression, is a sequence of characters that forms a pattern used to match and manipulate text.
+
+Regex Basics
+
+- `.`	Matches any character except newline.
+- `^` Matches the start of a string, or start of line in multi-line pattern.
+- `\A` Matches the start of a string.
+- `$` Matches the end of a string, or end of line in multi-line pattern.
+- `\Z` Matches the end of a string.
+- `\b` Matches a word boundary.
+- `\B` Matches a position that is not a word boundary.
+- `\d` Matches a digit (0-9).
+- `\D` Matches a non-digit.
+- `\w` Matches a word character (letter, digit, or underscore).
+- `\W` Matches a non-word character.
+- `\s` Matches a whitespace character (space, tab, newline, etc.).
+- `\S` Matches a non-whitespace character.
+- `()` Groups
+- `[]` Matches any character inside the square brackets.
+- `[^]` Matches any character not inside the square brackets.
+- `*`	Matches 0 or more of the preceding element.
+- `+`	Matches 1 or more of the preceding element.
+- `?`	Matches 0 or 1 of the preceding element.
+- `{n}`	Matches exactly n occurrences of the preceding element.
+- `{n,}`	Matches n or more occurrences of the preceding element.
+- `{n,m}`	Matches between n and m occurrences of the preceding element.
+
+Kotlin provides several functions for working with regular expressions, including:
+`matches`, `find`, `findAll`, `replace`, `split` and etc.
+
+This is a simple example:
+```kotlin
+    val phoneNumber="9112233445"
+    val phoneNumber2="9178"
+    val phoneNumber3="93abc"
+    val regex = Regex("^\\d{10}$")
+    println(regex.matches(phoneNumber)) // true
+    println(regex.matches(phoneNumber2)) // false
+    println(regex.matches(phoneNumber3)) // false
 ```
