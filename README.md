@@ -689,7 +689,7 @@ val numbers = arrayOf(1, 2, 3, 4, 5)
 val names = arrayOf("Alice", "Bob", "Charlie", "Dave")
 
 // Declare an array of a specific size
-val emptyArray = arrayOfNulls<Int>(10)
+val array = arrayOfNulls<Int>(10)
 
 // Declare an array of integers with a specified size and initial value
 val array = Array<Int>(7) { i -> i*i }
