@@ -19,4 +19,12 @@ fun main() {
         10 -> println("Number is 10")
         else -> println("??")
     }
+
+    // or with a direct expression
+
+    val numberToDisplay = when {
+        value % 2 == 0 -> "even"
+        else -> "odd"
+    }
+    println("Number $value is $numberToDisplay")
 }

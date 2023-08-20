@@ -23,8 +23,8 @@ If there is any issue, please open an issue or feel free to contribute to its ex
   - [Operators](#operators)
 - [Control Flow](#control-flow)
   - [If-else](#if-else)
-  - [Conditional Expression](#conditional-expression)
   - [When](#when)
+  - [Conditional Expression](#conditional-expression)
   - [For loop](#for-loop)
   - [Ranges](#ranges)
   - [While](#while)
@@ -302,13 +302,6 @@ if (condition) {
 }
 ```
 
-### Conditional Expression <a name="conditional-expression"></a>
-The syntax for conditional expressions is similar to that of the ternary operator in other programming languages.
-
-```kotlin
-val max = if (a > b) a else b         
-```
-
 ### When <a name="when"></a>
 
 ```kotlin
@@ -318,6 +311,26 @@ when (value) {
     else -> // Code to execute if value does not match any condition
 }
 ```
+
+### Conditional Expression <a name="conditional-expression"></a>
+Given if and when are expressions, we can directly assign them to variables.
+
+```kotlin
+val seasonFirstMonth = when(season) {
+    "summer" -> 6,
+    "winter" -> 12,
+    "automn" -> 9,
+    "spring" -> 3,
+    else -> error("There is only 4 seasons")
+}
+```
+
+Thus, it allows a similar ternary operator using a regular if.
+
+```kotlin
+val max = if (a > b) a else b         
+```
+
 ### For loop <a name="for-loop"></a>
 ```kotlin
 for (item in collection) {
