@@ -867,7 +867,7 @@ person.sayHello()
 
 ### Getters and setters <a name="getters-and-setters" ></a>
 
-Getter and setter in Kotlin are accessors used to retrieve and modify the value of a variable, respectively.
+Getter and setter in Kotlin are accessors used to retrieve and modify the value of a variable, respectively. The initializer, getter, and setter are optional. 
 
 ```kotlin
 class Person {
@@ -876,8 +876,14 @@ class Person {
         set(value) {
             field = "Name: $value"
         }
+
+    var age = 24 // has default getter and setter
+
+    val username="Ali" // has default getter
+
 }
 ```
+For more details about properties, getter/setter, backing fields, backing properties﻿ and etc read this <a href="https://kotlinlang.org/docs/properties.html">link</a>.
 
 ### Visibility modifiers <a name="visibility-modifiers" ></a>
 
