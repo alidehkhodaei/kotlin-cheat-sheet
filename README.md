@@ -317,10 +317,10 @@ Given if and when are expressions, we can directly assign them to variables.
 
 ```kotlin
 val seasonFirstMonth = when(season) {
-    "summer" -> 6,
-    "winter" -> 12,
-    "automn" -> 9,
-    "spring" -> 3,
+    "spring" -> 1
+    "summer" -> 2
+    "autumn" -> 3
+    "winter" -> 4
     else -> error("There is only 4 seasons")
 }
 ```
